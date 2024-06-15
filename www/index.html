@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Tareas</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Listado de <span class="highlight">tareas</span></h1>
+        <div class="content">
+            <form id="task-form">
+                <label for="title">Título</label>
+                <input type="text" id="title" name="title" placeholder="Escribe el título de la tarea" required>
+
+                <label for="datetime">Fecha</label>
+                <input type="datetime-local" id="datetime" name="datetime" required>
+
+                <label for="description">Descripción</label>
+                <textarea id="description" name="description" placeholder="Escribe la descripción" required></textarea>
+
+                <button type="submit">Subir Tarea</button>
+            </form>
+            <div id="task-list">
+                <h2>Tareas pendientes</h2>
+                <div id="tasks"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pop-up para actualizar tarea -->
+    <div id="update-popup" class="popup">
+        <div class="popup-content">
+            <span id="close-popup" class="close">&times;</span>
+            <h2>Actualizar Tarea</h2>
+            <form id="update-form">
+                <label for="update-title">Título</label>
+                <input type="text" id="update-title" name="update-title" required>
+
+                <label for="update-datetime">Fecha</label>
+                <input type="datetime-local" id="update-datetime" name="update-datetime" required>
+
+                <label for="update-description">Descripción</label>
+                <textarea id="update-description" name="update-description" required></textarea>
+
+                <button type="submit">Modificar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
