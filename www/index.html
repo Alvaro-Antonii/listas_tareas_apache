@@ -4,51 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Tareas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Listado de <span class="highlight">tareas</span></h1>
-        <div class="content">
-            <form id="task-form">
-                <label for="title">Título</label>
-                <input type="text" id="title" name="title" placeholder="Escribe el título de la tarea" required>
-
-                <label for="datetime">Fecha</label>
-                <input type="datetime-local" id="datetime" name="datetime" required>
-
-                <label for="description">Descripción</label>
-                <textarea id="description" name="description" placeholder="Escribe la descripción" required></textarea>
-
-                <button type="submit">Subir Tarea</button>
-            </form>
-            <div id="task-list">
-                <h2>Tareas pendientes</h2>
-                <div id="tasks"></div>
+    <div class="container mt-5">
+        <h1 class="text-center text-light">Listado de <span class="text-success">tareas</span></h1>
+        <button id="new-task-button" class="btn btn-success mb-3">Nueva Tarea</button>
+        <div class="row">
+            <div class="col-12">
+                <div id="task-list" class="bg-dark p-4 rounded">
+                    <h2 class="text-center text-light">Tareas pendientes</h2>
+                    <div id="tasks"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="expandable-cards-container">
+                    <div class="expandable-card" data-title="Comprar comestibles" data-image="./img/compras.jpg">
+                        <img class="background" src="./img/compras.jpg" alt="Background 1">
+                        <div class="card-content">
+                            <h3 class="title">Comprar comestibles</h3>
+                        </div>
+                    </div>
+                    <div class="expandable-card" data-title="Ejercicio" data-image="./img/Ejercicio.jpg">
+                        <img class="background" src="./img/Ejercicio.jpg" alt="Background 2">
+                        <div class="card-content">
+                            <h3 class="title">Ejercicio</h3>
+                        </div>
+                    </div>
+                    <div class="expandable-card" data-title="Salir con amigos" data-image="./img/salida.jpeg">
+                        <img class="background" src="./img/salida.jpeg" alt="Background 3">
+                        <div class="card-content">
+                            <h3 class="title">Salir con amigos</h3>
+                        </div>
+                    </div>
+                    <div class="expandable-card" data-title="Estudiar" data-image="./img/estudio.jpg">
+                        <img class="background" src="./img/estudio.jpg" alt="Background 4">
+                        <div class="card-content">
+                            <h3 class="title">Estudiar</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-    <!-- Pop-up para actualizar tarea -->
-    <div id="update-popup" class="popup">
-        <div class="popup-content">
+
+    <!-- Pop-up para crear o actualizar tarea -->
+    <div id="task-popup" class="popup">
+        <div class="popup-content bg-dark text-light rounded">
             <span id="close-popup" class="close">&times;</span>
-            <h2>Actualizar Tarea</h2>
-            <form id="update-form">
-                <label for="update-title">Título</label>
-                <input type="text" id="update-title" name="update-title" required>
-
-                <label for="update-datetime">Fecha</label>
-                <input type="datetime-local" id="update-datetime" name="update-datetime" required>
-
-                <label for="update-description">Descripción</label>
-                <textarea id="update-description" name="update-description" required></textarea>
-
-                <button type="submit">Modificar</button>
+            <h2 id="popup-title">Crear Tarea</h2>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="title">Título</label>
+                    <input type="text" id="title" name="title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="datetime">Fecha</label>
+                    <input type="datetime-local" id="datetime" name="datetime" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <textarea id="description" name="description" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Adjuntar Imagen</label>
+                    <input type="file" id="image" name="image" class="form-control-file">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Guardar Tarea</button>
             </form>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
