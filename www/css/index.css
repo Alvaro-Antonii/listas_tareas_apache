@@ -19,7 +19,7 @@ body {
     margin: 5px;
 }
 
-#task-popup, #update-popup {
+#task-popup, #update-popup, #alarm-popup {
     display: none;
     position: fixed;
     z-index: 1;
@@ -170,4 +170,9 @@ body {
     .row {
         flex-direction: column;
     }
+}
+
+.text-warning {
+    color: rgba(255, 255, 0, 0.886);
+     
 }

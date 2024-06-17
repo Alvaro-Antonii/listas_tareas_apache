@@ -11,10 +11,12 @@
     <div class="container mt-5">
         <h1 class="text-center text-light">Listado de <span class="text-success">tareas</span></h1>
         <button id="new-task-button" class="btn btn-success mb-3">Nueva Tarea</button>
+        <button id="toggle-button" class="btn btn-warning mb-3">Tareas Pendientes</button>
+        
         <div class="row">
             <div class="col-12">
                 <div id="task-list" class="bg-dark p-4 rounded">
-                    <h2 class="text-center text-light">Tareas pendientes</h2>
+                    <h2 class="text-center text-light">Tareas <span class="text-warning">pendientes</span></h2>
                     <div id="tasks"></div>
                 </div>
             </div>
@@ -73,6 +75,15 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Guardar Tarea</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Pop-up para mostrar alarma -->
+    <div id="alarm-popup" class="popup">
+        <div class="popup-content bg-dark text-light rounded">
+            <span id="close-alarm-popup" class="close">&times;</span>
+            <h2 id="alarm-title">Alarma de Tarea</h2>
+            <div id="alarm-description"></div>
         </div>
     </div>
 
